@@ -1,1 +1,96 @@
 <p>structural-directive works!</p>
+
+<div class="container mt-4">
+
+    <div class="row">
+
+        <div class="text-center col-3">
+            <input type="text" [(ngModel)]="input1">
+            <br>
+            <br>
+            <input type="text" [(ngModel)]="input2">
+
+            <!-- Using *ngif directive -->
+            <hr>
+            <h4>Using **ngif</h4>
+            <div *ngIf="input1===input2">
+                <p>Both inputs are same</p>
+            </div>
+            <div class="text-danger" *ngIf="input1!=input2">
+                <p>Both inputs are not same</p>
+            </div>
+            <hr>
+            <!-- using @if else block -->
+            <h4>Example for @IF Decorator</h4>
+            @if (input1===input2) {
+            <p>Both inputs are same</p>
+            }@else if (input1!=input2) {
+            <p class="text-danger">Both inputs are not same</p>
+            }
+
+        </div>
+        <div class="text-center col-3">
+            <!-- --------------------- Using Ng For ---------------------- -->
+            <!-- *ngfor loop is depricated in the angular 19 -->
+            <!-- instead of this using @nggor in angular 19 -->
+            <!-- if list is empty then to show default message @empty vlock is used -->
+            <h4>Using Ng For loop</h4>
+
+            <h6 class="text-success">Iterating loop</h6>
+            <div *ngFor="let s of array">
+                <p class="text-sucess">{{s}}</p>
+            </div>
+
+            <h4> Dropdown Using @ For loop</h4>
+
+            <select name="" id="" [(ngModel)]="varValue">
+                @for (vars of employeeList; track vars;) {
+                <option [ngValue]="vars.empid">
+                    {{vars.empid}}-{{vars.empEmail}}
+                </option>
+                }
+            </select>
+
+            <h5>Selected Emloyee Id is-{{varValue}}</h5>
+
+        </div>
+
+        <div class="text-center col-3">
+            <!-- --------------------- Using Ng For ---------------------- -->
+            <h4>Using Ngswitch</h4>
+            <button class="btn btn-warning m-2" (click)="setClass(1)">First</button>
+            <button class="btn btn-danger m-2" (click)="setClass(2)">Second</button>
+            <button class="btn btn-success m-2" (click)="setClass(3)">Third</button>
+
+
+            <div [ngSwitch]="switchOption">
+                <div *ngSwitchCase="1">
+                    <p>first case selected</p>
+                </div>
+                <div *ngSwitchCase="2">
+                    <p>second case selected</p>
+                </div>
+                <div *ngSwitchCase="3">
+                    <p>third case selected</p>
+                </div>
+            </div>
+
+
+            <!-- switch case -->
+            <h5>Switch case unsing switch</h5>
+
+            @switch (switchOption) {
+            @case (1) { <p>first case selected</p>}
+            @case (2) { <p>second case selected</p>}
+            @case (3) {<p>third case selected</p>}
+            @default { <p>Not found</p> }
+            }
+        </div>
+        <div class="text-center col-3">
+            <!-- --------------------- Using Ng For ---------------------- -->
+            <h4>Using Ng For loop</h4>
+        </div>
+
+    </div>
+
+</div>
