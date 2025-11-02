@@ -44,6 +44,10 @@ export class AttributeDirective {
 
   //Example-3:input
 
-  textColor: string = '';
+  customTextStyle: any = {
+    'color':'green',
+    'font':'areal',
+    'font-family': 'Arial, Helvetica, sans-serif;'
+  };
 
 }

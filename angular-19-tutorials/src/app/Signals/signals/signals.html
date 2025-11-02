@@ -1,0 +1,17 @@
+<div class="container">
+
+    <p>signals Tutorials...!!!</p>
+    <h5 class="text-danger center">counter value change inside DOM</h5>
+    <h4>Signal counter: {{counter()}}</h4>
+
+    <button class="bg-success text-light m-2" (click)="counter.set(counter()+1)">Increment</button>
+    <button class="bg-danger text-light m-2" (click)="counter.set(counter()-1)">Decrement</button>
+    <hr>
+    <h5 class="text-danger center">Counter change using Method</h5>
+    <button class="bg-success text-light m-2" (click)="setValue('inc')">Increment Via Method</button>
+    <button class="bg-danger text-light m-2" (click)="setValue('dec')">Decrement Via Method</button>
+
+    
+
+
+</div>
